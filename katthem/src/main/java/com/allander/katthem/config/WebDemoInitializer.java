@@ -15,7 +15,7 @@ public class WebDemoInitializer implements WebApplicationInitializer {
 	public void onStartup(ServletContext servletContext) throws ServletException {
 		WebApplicationContext context = getContext();
 		servletContext.addListener(new ContextLoaderListener(context));
-		ServletRegistration.Dynamic dispatcher = servletContext.addServlet("demoServlet", new DispatcherServlet(context));
+		ServletRegistration.Dynamic dispatcher = servletContext.addServlet("catServlet", new DispatcherServlet(context));
 		dispatcher.setLoadOnStartup(1);
 		dispatcher.addMapping("*.html");
 		dispatcher.addMapping("*.pdf");
