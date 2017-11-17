@@ -2,6 +2,8 @@ package com.allander.katthem.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.allander.katthem.model.Cat;
+import com.allander.katthem.model.Savior;
 import com.allander.katthem.service.CatService;
 
 @Controller
@@ -33,10 +36,12 @@ public class CatController {
 		catObj.setName("Cat name");
 		model.addAttribute("catObj",catObj);
 		return "addCat";
-	}	
+	}
 
 	@RequestMapping(value="/addCat",method=RequestMethod.POST) 
-	public String addCat(@ModelAttribute("catObj") Cat catObj) {
+	public String addCat(@ModelAttribute("catObj") Cat catObj, HttpSession session) {
+		Savior savior = (Savior)session.getAttribute("savior");
+		catObj.setSavior(savior);
 		catService.save(catObj);
 		return "redirect:index.jsp";
 	}

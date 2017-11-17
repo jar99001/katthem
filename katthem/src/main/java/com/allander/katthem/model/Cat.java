@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,20 +18,32 @@ public class Cat {
 
 	@Column(name="name",length=30)
 	private String name;
-
+	
 	@Column(name="description",length=5000)
 	private String Description;
 
+	@ManyToOne
+	private Savior savior;
+
 	
-//	< Getters & Setters>
+//	Getters & Setters
+
+	public String getDescription() {
+		return Description;
+	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public String getName() {
 		return name;
 	}
-	public String getDescription() {
-		return Description;
+	public Savior getSavior() {
+		return savior;
+	}
+	public void setDescription(String description) {
+		Description = description;
 	}
 	public void setId(Long id) {
 		this.id = id;
@@ -38,8 +51,8 @@ public class Cat {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public void setDescription(String description) {
-		Description = description;
+	public void setSavior(Savior savior) {
+		this.savior = savior;
 	}
 	
 }
