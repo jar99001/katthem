@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Register a new savior</title>
+<title>Login a savior.</title>
 <style type="text/css">
 	.error {
 		color:#ff0000;
@@ -21,6 +21,7 @@
 </style>
 </head>
 <body>
+	<h1>Login Savior</h1>
 	<form:form commandName="savior">
 		<form:errors path="*" cssClass="errorBlock" element="div"/>
 		<label for="textInput1">Name:</label>
@@ -30,12 +31,8 @@
 		<label for="textInput2">Password:</label>
 		<form:input type="password" path="password" cssClass="error"/>
 		<form:errors path="password" cssClass="error"/><br/>
-
-		<label for="textInput2">Email address:</label>
-		<form:input path="email" cssClass="error"/>
-		<form:errors path="email" cssClass="error"/>
 		<br>
-		<input type="submit" class="btn" value="Create new owner"/>
+		<input type="submit" class="btn" value="Login"/>
 	</form:form>
 </body>
 </html>

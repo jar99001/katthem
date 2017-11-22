@@ -1,5 +1,6 @@
 package com.allander.katthem.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +23,7 @@ public class Cat {
 	@Column(name="description",length=5000)
 	private String Description;
 
-	@ManyToOne
+	@ManyToOne//(cascade = {CascadeType.ALL})
 	private Savior savior;
 
 	

@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.allander.katthem.model.Cat;
 import com.allander.katthem.model.Savior;
@@ -40,10 +41,10 @@ public class CatController {
 
 	@RequestMapping(value="/addCat",method=RequestMethod.POST) 
 	public String addCat(@ModelAttribute("catObj") Cat catObj, HttpSession session) {
-		Savior savior = (Savior)session.getAttribute("savior");
+		Savior savior = (Savior)session.getAttribute("loggedIn");
 		catObj.setSavior(savior);
 		catService.save(catObj);
-		return "redirect:index.jsp";
+		return "index";
 	}
 	
 }
