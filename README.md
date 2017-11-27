@@ -1,11 +1,12 @@
 # katthem
-The application written in:
-
-Version: 3.9.1.RELEASE
-Build Id: 201710111105
+<b>The application written in:</b><br>
+Spring Tool Suite 
+Version: 3.9.1.RELEASE<br>
+Build Id: 201710111105<br>
 Platform: Eclipse Oxygen.1a (4.7.1a)
 
-Using Apache Maven 3.0.5  
+<b>Using:</b><br>
+Apache Maven 3.0.5<br>
 And java version 1.8.0_151 from Oracle.
 
 Purpose:
